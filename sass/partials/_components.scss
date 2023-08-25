@@ -1,0 +1,197 @@
+/* COMPONENTS */ 
+
+.logo {
+  font-size: 70px;
+  color: $color-primary;
+  width: 110px;
+  height: 110px;
+  text-decoration: none;
+  border: 4px solid $color-primary;
+  border-radius: 50%;
+  @include flexLayout;
+}
+
+.main-name {
+  font-family: $font-Marck;
+  font-size: 50px;
+  color: $color-primary;
+  text-align: center;
+  @include textStyles(none);
+}
+
+.sub-name {
+  font-family: $font-Roboto;
+  font-size: 18px;
+  color: $color-secondary;
+  text-align: center;
+  @include textStyles;
+}
+
+.main-heading {
+  font-family: $font-Marck;
+  font-size: 100px;
+  font-weight: 300;
+  color: $color-primary;
+  margin-bottom: 40px;
+  text-align: center;
+
+  @media(max-width: 1400px) {
+    font-size: 80px;
+    margin-bottom: 30px;
+  }
+
+  @media(max-width: 900px) {
+    font-size: 50px;
+    margin-bottom: 20px;
+  }
+}
+
+.sub-heading {
+  font-family: $font-Roboto;
+  font-size: 60px;
+  font-weight: 300;
+  color: $color-secondary;
+  margin-bottom: 80px;
+  text-align: center;
+
+  @media(max-width: 1400px) {
+    font-size: 40px;
+    margin-bottom: 50px;
+  }
+
+  @media(max-width: 900px) {
+    font-size: 30px;
+    margin-bottom: 35px;
+  }
+}
+
+.main-btn {
+  width: 200px;
+  height: 45px;
+  font-family: $font-Roboto;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: $color-secondary;
+  background-color: transparent;
+  border: 1px solid $color-primary;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  transition: all 0.5s;
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-dark;
+  }
+}
+
+ // < ---------- Cards ---------->
+ 
+ .card {
+  width: 33.3333333%;
+  height: 33vw;
+  position: relative;
+  overflow: hidden;
+
+  &:hover .card-overlay {
+    left: 0;
+  }
+
+  &-img {
+    @extend %fullSpace;
+    object-fit: cover;
+  }
+
+  &-overlay {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    background-color: rgba($color-primary, 0.6);
+    color: $color-white;
+    z-index: 10;
+    @include flexLayout;
+    flex-direction: column;
+    @extend %fullSpace;
+    transition: left 0.6s;
+
+    &-heading {
+      font-family: $font-Raleway;
+      font-size: 50px;
+      @include textStyles(capitalize);
+
+      @media(max-width: 1400px) {
+        font-size: 30px;
+        margin-bottom: 30px;
+      }
+   
+      @media(max-width: 900px) {
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+
+    }
+
+    &-paragraph {
+      font-family: $font-Roboto;
+      font-size: 30px;
+      @include textStyles(capitalize);
+      margin: 30px;
+
+      @media(max-width: 1400px) {
+        font-size: 30px;
+        margin-bottom: 30px;
+      }
+   
+      @media(max-width: 900px) {
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+
+    }
+
+    &-btn {
+      width: 150px;
+      height: 40px;
+      color: $color-primary;
+      background-color: $color-white;
+      font-family: $font-Raleway;
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: 1px solid $color-primary;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+  }
+}
+
+// < ---------- hamburger ---------->
+/* COMPONENTS */
+
+ 
+.hamburger-menu {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  top: 5%;
+  right: 5%;
+
+  .menu {
+    @extend %fullSpace;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    cursor: pointer;
+    transition: transform 0.5s;
+   
+    &-line {
+      width: 100%;
+      height: 3px;
+      background-color: $color-primary;
+      transform-origin: right;
+      transition: all 0.5s 0.5s;
+    }
+  }
+}
